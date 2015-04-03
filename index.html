@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DataCrawler</title>
+    
+<!-- CSS Files -->
+<link type="text/css" href="css/base.css" rel="stylesheet" />
+<link type="text/css" href="css/ForceDirected.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/cssSlide/default.css" />
+<link rel="stylesheet" type="text/css" href="css/cssSlide/component.css" />
+
+<!-- JS Files -->
+<script language="javascript" type="text/javascript" src="js/Jit/jit.js"></script>
+<script language="javascript" type="text/javascript" src="js/jQuery/jquery-2.1.0.js"></script>
+<script language="javascript" type="text/javascript" src="js/DataCrawler.js"></script>
+<script language="javascript" type="text/javascript" src="js/md5.js"></script>
+<script language="javascript" type="text/javascript" src="js/DivInfo.js"></script>
+<script language="javascript" type="text/javascript" src="js/DivExemple.js"></script>
+<script language="javascript" type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/autoRempl.js"></script>
+<script language="javascript" type="text/javascript" src="js/MenuEx.js"></script>
+
+
+
+<script src="js/jsSlide/classie.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script src="js/jquery.menu.js"></script>
+<script src="js/zeroclipboard/ZeroClipboard.js"></script>
+
+
+
+ <script> 
+  $(function() {
+    $( "#doc" ).draggable();
+
+  });
+  </script>
+</head>
+<body>
+
+<div id="popup_name" class="popup_block">
+	<h2>Exportation du graphique</h2>
+	<textarea id="areaPop">
+	</textarea>
+	<button class="buttonPP" id="clip_copy" data-clipboard-target="areaPop">Copier dans le presse papier</button>
+</div>
+
+
+<!--Ici se trouvera les bouton + x et "hand"-->
+<div id="panel"> 
+
+	<div id="plus" class="" onclick="selectTool(1);"></div>
+	<div id="deplacer" onclick="selectTool(2);"></div>
+	<div id="supp" onclick="selectTool(3);"></div>
+</div> <!--Fin panel-->
+
+
+
+<div class="ui-widget-content" > 
+	<a id="doc" href="site/" target="_blank">
+	 <span>HELP?<span> <!--Ou "Documentation" je sais pas trop-->
+	</a>
+</div>
+
+
+	<div  id="outer_container" class="ui-widget-content outer_container" > 
+        <a id="bulleEx" class="menu_button" title="Toggle" ><span>Examples</span></a>
+        <ul class="menu_option">
+           <li><a href='#' onclick="autoRempl(1)"><span>WordNet</span></a></li>
+ 		   <li><a href='#' onclick="autoRempl(2)"><span>Steam</span></a></li>
+  		   <li><a href='#' onclick="autoRempl(3)"><span>Debian</span></a></li>
+        </ul>
+	</div>
+
+
+<div id="champs" class="champs"> 
+	<div id="recherche">
+	
+		<div id="quad" style="display:block;"><input id="n" type="text" name="Name" onMouseOver="displayDivInfo('<p>Display name of the root node</p> <p>Exemple: Car</p>', '1'); " onMouseOut="displayDivInfo(); " placeholder="Name" /></div>
+		<div id="second" style="display:block;"><input id="t" type="text" name="Cible" onMouseOver="displayDivInfo('<p>Target of the root node</p> <p>Exemple: Car</p>','2'); " onMouseOut="displayDivInfo(); " placeholder="Target"/></div>
+		<div id="first" style="display:block;"><textarea id='f' type="text" name="Champs" onMouseOver="displayDivInfo('<p>Field of the root node<br />URL with the string $TARGET<br /> The next node will replace $TARGET by it\'s node field</p> <p>Exemple: http://wordnetweb.princeton.edu/ <br /> perl/webwn?o2=&o0=&o8=1&o1=&o7=&o5 <br /> =&o9=&o6=&o3=&o4=&s=$TARGET</p>','3');  " onMouseOut="displayDivInfo(); " placeholder="Field"></textarea> </textarea> </div>
+		<div id="third" style="display:block;"><textarea id="r" type="text" onMouseOver="displayDivInfo('<p>Rule <br />Regular expression with 2 named groups :<ul><li>node: next target</li><li>name: name of the next target</li></ul></p> <p>Exemple: #&lt;a href=&quot;[^s]*s=(?&lt;node&gt;[^&quot;&amp;]*)&quot;&gt;(?&lt;data&gt;[^&lt;]*)&lt;/a&gt;#</p>','4'); " onMouseOut="displayDivInfo(); " placeholder="Rule" ></textarea>
+		</div>
+	
+		<div id="button" data-role="button" onclick='init(document.getElementById("t").value, document.getElementById("n").value, document.getElementById("r").value, document.getElementById("f").value);'>valider</div>
+	</div>	
+</div>	
+
+<div id="mask"></div>
+
+<div id="container">
+
+	<a href="#?w=500" class="ButtonExport poplight" rel="popup_name" onclick="dot()">Export .dot</a>
+
+  <div id="left-container"></div>
+  <div id="opZoom"><!--bug Affichage-->
+			<div id="zoom" class="bZoom" onclick="zoomin();">+</div>
+			<div id="reload" class="bZoom" > <img src="css/imageBoutton/reload.png" style="height: 40px; width: 40px; " onclick="redraw();" /> </div>
+			<div id="dezoom" class="bZoom" onclick="zoomout();">-</div>
+		</div>
+
+  <div id="center-container"><!--bug Affichage (surement aussi)-->
+  	<img src="css/Universit%C3%A9_de_Savoie_(logo).svg" style="position: absolute; width: 158px; opacity: 0.6; top: 80%; left: 8%; z-index:99999;"/>
+    <div id="infovis"></div>    
+  </div>
+
+  <div id="right-container">
+    <div id="inner-details"></div>
+  </div>
+
+  <div id="log"></div>
+
+</div>
+
+
+<script type="text/javascript">	
+
+$("#button").click(function() {
+$( "#champs" ).toggle( "scale" );
+$( "#mask" ).fadeTo("slow", 0);
+$( "#mask" ).css("display","none");	
+$("#doc").css("display","none")
+$("#outer_container").css("display","none")
+});
+
+
+</script>
+
+
+
+<script type="text/javascript">
+    function PieMenuInit(){		
+			$('#outer_container').PieMenu({
+			   'starting_angel':0,
+		        'angel_difference' : 110,
+		        'radius':150,
+		    }); 		
+		}
+		$(function() {          
+			$( "#outer_container" ).draggable();
+			PieMenuInit();
+
+		});
+		function reset(){
+			if($(".menu_button").hasClass('btn-rotate'))
+			$(".menu_button").trigger('click');
+
+			$("#info").fadeIn("slow").fadeOut("slow");
+			PieMenuInit();
+		}
+</script>
+
+
+
+<script type="text/javascript">	
+$("#supp").click(function() {
+			$( "#infovis-canvas" ).css("cursor","url('css/imageBoutton/cursorR.png'), auto");	
+		});
+</script>
+
+<script type="text/javascript">	
+$("#plus").click(function() {
+			$( "#infovis-canvas" ).css("cursor","url('css/imageBoutton/cursorG.png'), auto");	
+		});
+</script>
+
+
+
+
+</body>
+</html>
