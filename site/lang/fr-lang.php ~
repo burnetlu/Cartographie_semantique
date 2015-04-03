@@ -1,0 +1,47 @@
+<?php
+
+//--------------------------------------------------------
+// Menu horizontal
+//--------------------------------------------------------
+
+define('ACCUEIL_MENU','Accueil');
+define('VUES_MENU','Vues');
+define('PROPOS_MENU','A Propos');
+define('CONTACT_MENU','Contact');
+
+//---------------------------------------------------------
+// index.php
+//--------------------------------------------------------- 
+
+define('TITRE_INDEX','Cartographie des réseaux sémantiques');
+define('SOUS_TITRE_INDEX','Projet-L3');
+define('CORPS_INDEX','“La cartographie sémantique est le recours à des représentations graphiques d’un ensemble d’informations (des cartes) pour partager et créer des connaissances. L’objectif des cartes est d’aider à facilement appréhender des ensembles d’informations complexes.”');
+
+
+//---------------------------------------------------------
+// APropos.php
+//--------------------------------------------------------- 
+
+define('TITRE1_PROPOS','Pourquoi un tel projet ?');
+define('CORPS1_PROPOS','“ Une image vaut mille mots ». Cette constatation sur la valeur de la visualisation est d’autant plus vraie si l’on travaille avec un grand nombre d’informations. La synthèse des travaux sur la cartographie et sur la visualisation permet de considérer les cartes comme un médium idéal entre un grand nombre d’informations et l’esprit. Chaque carte joue alors le rôle de support externe de la pensée pour amplifier la cognition de ses utilisateurs.”');
+define('CORPS2_PROPOS','En effet, le traitement d’une grande quantité de données est une tâche complexe si ces données ne sont pas structurées. La meilleure structuration pour l’humain étant visuelle, il est légitime de vouloir développer une application capable de récupérer, structurer et afficher sous forme de carte une grande quantité de données afin de mieux les traiter.');
+define('TITRE2_PROPOS','Qu’est ce que la cartographie sémantique ?');
+define('CORPS3_PROPOS','“La cartographie sémantique correspond à la cartographie d’un espace informationnel basée sur sa sémantique. En d’autres termes, la cartographie sémantique est le recours à des représentations graphiques d’un ensemble d’informations (sous forme de cartes) pour partager et créer des connaissances. L’objectif de chaque carte est alors d’aider à facilement appréhender des ensembles d’informations complexes. La cartographie sémantique est une activité essentielle à la gestion des connaissances, qui permet de tirer parti de toute la richesse des informations des organisations.” ');
+
+
+//---------------------------------------------------------
+// Contact.php
+//--------------------------------------------------------- 
+
+
+define('CORPS1_CONTACT', 'Ce site vous est proposé par les élèves de L3-STIC-INFO de l Université de Savoie, dans le cadre de leur projet.');
+define('CORPS2_CONTACT', 'Tuteur de projet :');
+
+
+//---------------------------------------------------------
+// Fin
+//--------------------------------------------------------- 
+
+?>
+
+

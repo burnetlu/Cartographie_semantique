@@ -1,0 +1,47 @@
+<?php
+
+//--------------------------------------------------------
+// Menu horizontal
+//--------------------------------------------------------
+
+define('ACCUEIL_MENU','Welcome');
+define('VUES_MENU','Views');
+define('PROPOS_MENU','Conveniently');
+define('CONTACT_MENU','Contact');
+
+//---------------------------------------------------------
+// index.php
+//--------------------------------------------------------- 
+
+define('TITRE_INDEX','Cartography of the semantic networks');
+define('SOUS_TITRE_INDEX','Project-L3');
+define('CORPS_INDEX','“The semantic mapping cartography is the appeal to graphic representations of a set of information (maps) to share and create knowledge. The objective of maps is to help to arrest easily complex sets of information.”');
+
+
+//---------------------------------------------------------
+// APropos.php
+//--------------------------------------------------------- 
+
+define('TITRE1_PROPOS','Why this project ?');
+define('CORPS1_PROPOS','“A picture is worth a thousand words. "This finding on the value of visualization is especially true when working with a lot of information. The synthesis of work on mapping and visualization can consider maps as an ideal medium between a large number of information and mind. Each card then acts as the outer support thought to amplify the cognition of its users.”');
+define('CORPS2_PROPOS','Indeed, the treatment of a large amount of data is a complex task if these data are not structured. The best structure for the human being visual, it is legitimate to want to develop an application that can recover, organize and display in map form a large amount of data to better treat them.');
+define('TITRE2_PROPOS','What is the semantic mapping?');
+define('CORPS3_PROPOS','“Semantic mapping is the mapping of an information space based on its semantics. In other words, the semantic mapping is the use of graphical representations of a set of information (in the form of cards) to share and create knowledge. The goal of each card is then to help easily understand complex sets of information. Semantic mapping is an essential activity to knowledge management, which takes advantage of the wealth of information organizations.” ');
+
+
+//---------------------------------------------------------
+// Contact.php
+//--------------------------------------------------------- 
+
+
+define('CORPS1_CONTACT', 'Ce site vous est proposé par les élèves de L3-STIC-INFO de l Université de Savoie, dans le cadre de leur projet.');
+define('CORPS2_CONTACT', 'Tuteur de projet :');
+
+
+//---------------------------------------------------------
+// Fin
+//--------------------------------------------------------- 
+
+?>
+
+

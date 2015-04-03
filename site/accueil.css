@@ -1,0 +1,179 @@
+
+body {
+		background-color: white;
+		color: black;
+		width: 900px;
+		margin: 30px auto;
+		text-align: center;
+		font-family: Helvetica, Arial, sans-serif;
+    }
+
+h1{
+		color: blue;
+		font-family: Times;
+		width: 100px;
+		width: 900px;
+	}    
+	
+	h2{
+				color: gray;
+				font-family: Times;
+				width: 80px;
+				width: 900px;
+	 			
+		}
+		
+		h3{
+					color: gray;
+					font-family: Times;
+					width: 800px;
+					text-align:left;			
+			}
+			
+		h4{
+					color: red;
+					font-family: Times;
+					width: 900px;
+					text-align:left;
+		}
+
+		h5{
+					color: green;
+					font-family: Times;
+					width: 600px;
+					text-align:left;
+		}
+
+		
+
+		ul li{
+			text-align :left;
+		}
+
+		ol li{
+			text-align : left;
+		}
+
+				    
+ /* Menu */   
+	#ex2 {
+		padding-top: 5em; /* Place le menu horizontalement et dans la bonne zone de la page web */
+    }
+
+    /* listes */
+	.nav >li {				/* > Permet d'avoir les listes les une sous les autres */
+		display: inline;
+		list-style: none; /* nécessaire pour IE7 */ 
+		float:left;	
+		color :rgba(255,255,255,0); /* Astuce pour enlever les petits ronds (transparence)*/
+	}
+
+		
+	#ex2 .nav {
+		border: 1px solid #333;
+		border-top-color: #707070;
+		background-color: #5E5E5E;
+		background: -moz-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: -webkit-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: -ms-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: -o-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		text-align: center;
+		height: 36px;
+		-webkit-box-shadow: 0 1px 3px #999;
+		-moz-box-shadow: 0 1px 3px #999;
+		box-shadow: 0 1px 3px #999;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+    }
+    
+	#ex2 .nav a {
+		
+		height: 36px;
+		margin:0;
+		padding: 0 18px; /* Diminuer si volonté tous les liens du menu ne rentre pas */
+		line-height: 36px;
+		border-left: 1px solid #555;
+		border-right: 1px solid #888;
+		text-decoration: none;
+		color: white;
+		text-shadow: -1px -1px 0 #444;
+		font-family: Helvetica, Arial, Verdana, sans-serif;
+		font-size: 1em;
+    }
+    
+    #ex2 .nav li ul
+    {
+    	padding-top: 0em;
+		padding-left: 0em;
+        position: absolute; /* Position absolue */
+        border: 1px solid #333;
+		border-top-color: #707070;
+		background-color: #5E5E5E;
+		background: -moz-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: -webkit-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: -ms-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: -o-linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		background: linear-gradient(bottom , #666666 0pt, #5E5E5E 50%, #707070 51%, #808080 100%) repeat scroll 0 0 transparent;
+		text-align: center;
+		
+		-webkit-box-shadow: 0 1px 3px #999;
+		-moz-box-shadow: 0 1px 3px #999;
+		box-shadow: 0 1px 3px #999;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px; 
+        left: -999em; /* Hop, on envoie loin du champ de vision */
+    }
+
+    /* Lors du passage de la souris sur un des liens*/
+	#ex2 .nav a:hover,
+	#ex2 .nav a:focus {
+		background-color: #3E3E3E;
+		background: -moz-linear-gradient(bottom , #444444 0pt, #3E3E3E 50%, #505050 51%, #606060 100%) repeat scroll 0 0 transparent;
+		background: -webkit-linear-gradient(bottom , #444444 0pt, #3E3E3E 50%, #505050 51%, #606060 100%) repeat scroll 0 0 transparent;
+		background: -ms-linear-gradient(bottom , #444444 0pt, #3E3E3E 50%, #505050 51%, #606060 100%) repeat scroll 0 0 transparent;
+		background: -o-linear-gradient(bottom , #444444 0pt, #3E3E3E 50%, #505050 51%, #606060 100%) repeat scroll 0 0 transparent;
+		background: linear-gradient(bottom , #444444 0pt, #3E3E3E 50%, #505050 51%, #606060 100%) repeat scroll 0 0 transparent;
+		text-shadow: -1px -1px 0 #000;
+    }
+    
+    /* Sous-listes lorsque la souris passe sur un élément de liste */	
+    #ex2 .nav li:hover, #ex2 .nav li.sfhover ul 
+	{
+        left: auto; /* Repositionnement normal */
+        min-height: 0; /* Corrige un bug sous IE */
+	}
+	
+
+/**
+* partie css traitant les infobulles
+**/
+a.bulle{
+position:relative;
+z-index:24;
+color:#000;
+text-decoration:none
+}
+ 
+a.bulle:hover{
+z-index:25;
+background-color:#FFF
+}
+ 
+a.bulle span{
+display: none
+}
+ 
+a.bulle:hover span{
+display:block;
+position:absolute;
+top:2em; right:-2em; width:5em;
+border:1px solid #000;
+background-color:#8A2BE2;
+color:#FFFFFF;
+text-align: center;
+font-weight:none;
+padding:5px;
+} 
